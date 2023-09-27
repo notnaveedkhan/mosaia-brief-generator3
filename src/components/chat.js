@@ -74,10 +74,13 @@ const Chatbot = () => {
           {messages.map((message, index) => {
             return (
               <div key={index * 1000} className={`message ${message.sender}`}>
-                {message.text}
-              </div>
-            );
-          })}
+              {message.sender === 'bot' ?
+                <div dangerouslySetInnerHTML={{ __html: message.text }} /> :
+                message.text
+              }
+        </div>
+    );
+})}
         </div>
         <div className="input-area">
           <input
@@ -91,9 +94,9 @@ const Chatbot = () => {
       </div>
     </div>
     <div className="right-panel">
-      <div><h2>{proposed.header}</h2>{proposed.text}</div>
-      <div><h2>{improved.header}</h2>{improved.text}</div>
-      <div><h2>{draft.header}</h2>{draft.text}</div>
+      <div><h2>{proposed.header}</h2><div dangerouslySetInnerHTML={{ __html: proposed.text }} /></div>
+      <div><h2>{improved.header}</h2><div dangerouslySetInnerHTML={{ __html: improved.text }} /></div>
+      <div><h2>{draft.header}</h2><div dangerouslySetInnerHTML={{ __html: draft.text }} /></div>
     </div>
   </div>
 );
