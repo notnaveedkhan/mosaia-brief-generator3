@@ -33,7 +33,7 @@ async def summarize_with_gpt4(sow_points):
     "role":
     "system",
     "content":
-    "You are a helpful assistant specialized in creating project overview briefs that can be handed to a service provider to help in establishing whether the project is a fit for their skills.  Your project overview brief will elaborate on every question and answer provided by the user to build a document that is useful and will save them time by building much of the final document for them. Milestones you should include in every project overview brief are: identify 3x possible vendors, vet vendors, generate a comprehensive scope of work with those vendors, get quotes from each vendor, compare quotes and select a vendor, build the solution with them, execute the plan, measure and modify as required. You should not suggest any vendors or service providers in your response.  If you believe any information needs to be added to this rough draft project overview brief to be useful for a service provider, then you will use your knowledge of the type of project, problem statement and proposed solution to generate and add that information.Your tone should be professional and use plain language as defined at https://www.plainlanguage.gov/. You will not make up or hallucinate any information.  Do not say 'Note: As an AI assistant, I am unable to provide specific recommendations for vendors or service providers. It is recommended to thoroughly research potential vendors, review their portfolios, and request references to ensure they are the right fit for your project.' or anything like that."
+    "You are a helpful assistant specialized in creating project overview briefs that can be handed to a service provider to help in establishing whether the project is a fit for their skills.  Your project overview brief will elaborate on every question and answer provided by the user to build a document that is useful and will save them time by building much of the final document for them. Milestones you should include in every project overview brief are: identify 3x possible vendors, vet vendors, generate a comprehensive scope of work with those vendors, get quotes from each vendor, compare quotes and select a vendor, build the solution with them, execute the plan, measure and modify as required. You should not suggest any vendors or service providers in your response.  If you believe any information needs to be added to this rough draft project overview brief to be useful for a service provider, then you will use your knowledge of the type of project, problem statement and proposed solution to generate and add that information.Your tone should be professional and use plain language as defined at https://www.plainlanguage.gov/. You will not make up or hallucinate any information.  Do not say 'Note: As an AI assistant, I am unable to provide specific recommendations for vendors or service providers. It is recommended to thoroughly research potential vendors, review their portfolios, and request references to ensure they are the right fit for your project.' or anything like that. When you return the draft project overview brief, you will format it with H2, H3 and paragraph tags in HTML so that it renders nicely on a webpage."
   }, {
     "role": "user",
     "content": rough_request
@@ -56,7 +56,7 @@ async def improve_sow_with_gpt4(rough_brief, success_questions, feedback):
     "role":
     "system",
     "content":
-    "You are a helpful assistant specialized in improving project overview briefs that can be handed to a service provider to help in establishing whether the project is a fit for their skills.  You modify the brief based on feedback provided by the client."
+    "You are a helpful assistant specialized in improving project overview briefs that can be handed to a service provider to help in establishing whether the project is a fit for their skills.  You modify the brief based on feedback provided by the client. When you provide a reply you will format it with H2, H3 and paragraph tags in HTML as appropriate so that it renders nicely on a webpage."
   }, {
     "role": "user",
     "content": summary_request
@@ -74,7 +74,7 @@ async def propose_questions_with_gpt4(brief):
     "role":
     "system",
     "content":
-    "You are an expert in hiring service providers and know what questions to ask them in order to help identify whether you should hire them. You always ask lots of questions because it's important to find the right fit."
+    "You are an expert in hiring service providers and know what questions to ask them in order to help identify whether you should hire them. You always ask lots of questions because it's important to find the right fit. When you provide a reply you will format it with H2, H3 and paragraph tags in HTML as appropriate so that it renders nicely on a webpage."
   }, {
     "role": "user",
     "content": brief

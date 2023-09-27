@@ -51,7 +51,7 @@ const Chatbot = () => {
         setImproved({header: (msg_list[2] ? 'Improved Project Overview Brief' : ''), text: (msg_list[2] || '')})
         setProposed({header: (msg_list[3] ? 'Proposed Project Overview Brief' : ''), text: (msg_list[3] || '')})
       } else {
-        setDraft({header: 'hello world', text: 'I can do it.'});
+        setDraft({header: '', text: ''});
         setImproved({header: '', text: ''});
         setProposed({header: '', text: ''});
       }
