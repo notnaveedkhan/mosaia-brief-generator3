@@ -71,7 +71,7 @@ body.dark .messages {
   margin-bottom: 10px;
   line-height: 1.4;
   word-wrap: break-word;
-  margin-bottom: 20px;
+  /*margin-bottom: 20px;*/
 }
 
 .message.user {
@@ -84,8 +84,9 @@ body.dark .messages {
 }
 
 .message.bot {
+  margin-right: 1rem;
   float: left;
-  width: 80%;
+  /*width: 80%;*/
   background-color: #bbbbbb;
   color: #000000;
   padding: 7px 15px;

@@ -1,24 +1,12 @@
-from flask import Flask, request, jsonify
-
 # Brief builder imports
-import os
-import openai
-import time
-import concurrent.futures
 import asyncio
-
-from artifact_generator import generate_artifacts_list
-from SOWquestions import ask_scope_questions
-from experience_questions import ask_experience_questions
-from success_questions import ask_success_questions
-from success_questions import get_generic_success_keys
-# Import the main function from the generate_sow module
-from generate_sow import generate_sow
+import json
 
 # Existing imports
-from flask import Flask, request, jsonify, send_from_directory, redirect, url_for
-import json
-from answer_questions import answer_question
+from flask import Flask, request, jsonify, send_from_directory
+
+# Import the main function from the generate_sow module
+from generate_sow import generate_sow
 
 app = Flask(__name__)
 
@@ -76,7 +64,7 @@ async def ask():
   # answer = await generate_sow(transcript)
   answer = await generate_sow(client_messages)
 
-  response_data = {"bot": answer}
+  response_data = {"bot": answer["message"], "result": answer["result"]}
   if (len(client_messages) == 10):
     client_messages.clear()
   # response_data = {"bot": "I am a student."}

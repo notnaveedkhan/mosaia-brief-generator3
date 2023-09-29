@@ -12,16 +12,20 @@ const Chatbot = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await axios.post('/ask', {transcript: 'welcome_message'})
+        const result = await axios.post('/ask', { transcript: 'welcome_message' })
           .catch(error => console.error('API call failed:', error)); // Added catch clause
-        // console.log('Received response:', result.data); // Added log
         const botMessage = result.data.bot;
-        // console.log('Bot Message: ', botMessage); // Log botMessage
-        setMessages((prevMessages) => [...prevMessages, { sender: 'bot', text: botMessage }]);
+        setMessages((prevMessages) => {
+        const newArr = botMessage.split("<br/>").map((value)=> {
+          return {sender: 'bot', text: value}
+        });
+        return [...prevMessages, ...newArr];
+          // return [...prevMessages, {sender: 'bot', text: botMessage}]
+        });
       } catch (error) {
         console.error('Error sending message:', error);
       }
-    }  
+    }
     fetchData();
   }, []);
 
@@ -44,19 +48,21 @@ const Chatbot = () => {
       const response = await axios.post('/ask', { transcript: newMessages }, { withCredentials: true })
         .catch(error => console.error('API call failed:', error)); // Added catch clause
       var botMessage = response.data.bot;
-      if (newMessages.length >= 16) {
-        const msg_list = botMessage.split('&&');
-        botMessage = msg_list[0];
-        setDraft({header: (msg_list[0] ? 'Draft Project Overview Brief' : ''), text: (msg_list[0] || '')})
-        setImproved({header: (msg_list[2] ? 'Improved Project Overview Brief' : ''), text: (msg_list[2] || '')})
-        setProposed({header: (msg_list[3] ? 'Proposed Project Overview Brief' : ''), text: (msg_list[3] || '')})
+      var result = response.data.result;
+      if (result) {
+        setDraft({ header: (result.rough ? 'Draft Project Overview Brief' : ''), text: (result.rough || '') })
+        setImproved({ header: (result.brief ? '' : ''), text: (result.brief || '') })
+        setProposed({ header: (result.proposed ? 'Proposed Project Overview Brief' : ''), text: (result.proposed || '') })
       } else {
         setDraft({header: '', text: ''});
         setImproved({header: '', text: ''});
         setProposed({header: '', text: ''});
       }
       setMessages((prevMessages) => {
-        return [...prevMessages, { sender: 'bot', text: botMessage }];
+        const newArr = botMessage.split("<br/>").map((value)=> {
+          return {sender: 'bot', text: value}
+        });
+        return [...prevMessages, ...newArr];
       });
     } catch (error) {
       console.error('Error sending message:', error);
@@ -64,42 +70,44 @@ const Chatbot = () => {
   };
 
   return (
-      <div className="container">
-    <div className="left-panel">
-      <h1>Save Hours on Project Briefs</h1>
-      <h2>We use AI to build them in minutes</h2>
-      <div className="chatbot">
-        <div className="head">ChatBot</div>
-        <div className="messages" ref = {ref}>
-          {messages.map((message, index) => {
-            return (
-              <div key={index * 1000} className={`message ${message.sender}`}>
-              {message.sender === 'bot' ?
-                <div dangerouslySetInnerHTML={{ __html: message.text }} /> :
-                message.text
-              }
-        </div>
-    );
-})}
-        </div>
-        <div className="input-area">
-          <input
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
-          />
-          <button onClick={sendMessage}>Send</button>
+    <div className="container">
+      <div className="left-panel">
+        <h1>Save Hours on Project Briefs</h1>
+        <h2>We use AI to build them in minutes</h2>
+        <div className="chatbot">
+          <div className="head">ChatBot</div>
+          <div className="messages" ref={ref}>
+            {messages.map((message, index) => {
+              return (
+                <div key={index * 1000} className={`message ${message.sender}`}>
+                  {message.sender === 'bot' ?
+                    <div dangerouslySetInnerHTML={{ __html: message.text }} /> :
+                    message.text
+                  }
+                </div>
+              );
+            })}
+          </div>
+          <div className="input-area">
+            <input
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
+            />
+            <button onClick={sendMessage}>Send</button>
+          </div>
         </div>
       </div>
+      <div className="right-panel">
+        <div><h2>{proposed.header}</h2><div dangerouslySetInnerHTML={{ __html: proposed.text }} /></div>
+        {improved.text && proposed.text && <hr style={{marginTop:'2rem'}}/>}
+        <div><h2>{improved.header}</h2><div dangerouslySetInnerHTML={{ __html: improved.text }} /></div>
+        {draft.text && improved.text && <hr style={{marginTop:'2rem'}}/>}
+        <div><h2>{draft.header}</h2><div dangerouslySetInnerHTML={{ __html: draft.text }} /></div>
+      </div>
     </div>
-    <div className="right-panel">
-      <div><h2>{proposed.header}</h2><div dangerouslySetInnerHTML={{ __html: proposed.text }} /></div>
-      <div><h2>{improved.header}</h2><div dangerouslySetInnerHTML={{ __html: improved.text }} /></div>
-      <div><h2>{draft.header}</h2><div dangerouslySetInnerHTML={{ __html: draft.text }} /></div>
-    </div>
-  </div>
-);
+  );
 };
 
 export default Chatbot;

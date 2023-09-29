@@ -19,8 +19,9 @@
     },
     "scripts": {
         "webpack": "webpack",
-        "watch": "webpack",
+        "watch": "webpack --watch",
         "server": "python3 chatbot.py",
-        "watch-server": "python3 chat-server.py"
+        "watch-server": "python3 chat-server.py",
+        "starter":"flask run"
     }
 }

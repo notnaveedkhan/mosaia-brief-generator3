@@ -17,7 +17,7 @@
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n  font-family: Arial, sans-serif;\n  margin: 0;\n  padding: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 100vh;\n  background-color: #ffffff;\n  color: #000000;\n  transition: all 0.3s ease;\n  width: 90%; /* Add this */\n  margin-left: auto; /* Add this */\n  margin-right: auto; /* Add this */\n}\n\nbody.dark {\n  background-color: #1c1c1c;\n  color: #ffffff;\n}\n\n#root {\n  width: 100%;\n  height: 100%;\n}\n\n.container {\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n  height: 100%;\n}\n\n.left-panel, .right-panel {\n  overflow: auto;\n  width: 48%;\n  height: 100%;\n}\n\n.chatbot {\n  border: 1px solid #ccc;\n  border-radius: 5px;\n  overflow: hidden;\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  max-width: 400px;\n  height: 500px;\n}\n\n.messages {\n  flex-grow: 1;\n  overflow-y: auto;\n  padding: 10px;\n  background-color: #f5f5f5;\n}\n\nbody.dark .messages {\n  background-color: #2c2c2c;\n}\n\n.head {\n  background: #2d3436;\n  padding: 10px;\n  border-bottom: 1px solid #ccc;\n  font-weight: 600;\n  color: #f5f5f5;\n}\n\n.message {\n  margin-bottom: 10px;\n  line-height: 1.4;\n  word-wrap: break-word;\n  margin-bottom: 20px;\n}\n\n.message.user {\n  float: right;\n  width: 80%;\n  background-color: #007bff;\n  color: #ffffff;\n  padding: 7px 15px;\n  border-radius: 10px 10px 0 10px;\n}\n\n.message.bot {\n  float: left;\n  width: 80%;\n  background-color: #bbbbbb;\n  color: #000000;\n  padding: 7px 15px;\n  border-radius: 0px 10px 10px 10px;\n}\n\nbody.dark .message.bot {\n  background-color: #3d3d3d;\n  color: #ffffff;\n}\n\n.input-area {\n  display: flex;\n  padding: 5px;\n  border-top: 1px solid #ccc;\n}\n\n.input-area input {\n  flex-grow: 1;\n  border: none;\n  border-radius: 5px;\n  padding: 5px;\n  outline: none;\n}\n\n.input-area button {\n  background-color: #007bff;\n  color: #ffffff;\n  border: none;\n  border-radius: 5px;\n  padding: 5px 10px;\n  margin-left: 5px;\n  cursor: pointer;\n}\n\nbody.dark .input-area button {\n  background-color: #3d3d3d;\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n  font-family: Arial, sans-serif;\r\n  margin: 0;\r\n  padding: 0;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  height: 100vh;\r\n  background-color: #ffffff;\r\n  color: #000000;\r\n  transition: all 0.3s ease;\r\n  width: 90%; /* Add this */\r\n  margin-left: auto; /* Add this */\r\n  margin-right: auto; /* Add this */\r\n}\r\n\r\nbody.dark {\r\n  background-color: #1c1c1c;\r\n  color: #ffffff;\r\n}\r\n\r\n#root {\r\n  width: 100%;\r\n  height: 100%;\r\n}\r\n\r\n.container {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  width: 100%;\r\n  height: 100%;\r\n}\r\n\r\n.left-panel, .right-panel {\r\n  overflow: auto;\r\n  width: 48%;\r\n  height: 100%;\r\n}\r\n\r\n.chatbot {\r\n  border: 1px solid #ccc;\r\n  border-radius: 5px;\r\n  overflow: hidden;\r\n  display: flex;\r\n  flex-direction: column;\r\n  width: 100%;\r\n  max-width: 400px;\r\n  height: 500px;\r\n}\r\n\r\n.messages {\r\n  flex-grow: 1;\r\n  overflow-y: auto;\r\n  padding: 10px;\r\n  background-color: #f5f5f5;\r\n}\r\n\r\nbody.dark .messages {\r\n  background-color: #2c2c2c;\r\n}\r\n\r\n.head {\r\n  background: #2d3436;\r\n  padding: 10px;\r\n  border-bottom: 1px solid #ccc;\r\n  font-weight: 600;\r\n  color: #f5f5f5;\r\n}\r\n\r\n.message {\r\n  margin-bottom: 10px;\r\n  line-height: 1.4;\r\n  word-wrap: break-word;\r\n  /*margin-bottom: 20px;*/\r\n}\r\n\r\n.message.user {\r\n  float: right;\r\n  width: 80%;\r\n  background-color: #007bff;\r\n  color: #ffffff;\r\n  padding: 7px 15px;\r\n  border-radius: 10px 10px 0 10px;\r\n}\r\n\r\n.message.bot {\r\n  margin-right: 1rem;\r\n  float: left;\r\n  /*width: 80%;*/\r\n  background-color: #bbbbbb;\r\n  color: #000000;\r\n  padding: 7px 15px;\r\n  border-radius: 0px 10px 10px 10px;\r\n}\r\n\r\nbody.dark .message.bot {\r\n  background-color: #3d3d3d;\r\n  color: #ffffff;\r\n}\r\n\r\n.input-area {\r\n  display: flex;\r\n  padding: 5px;\r\n  border-top: 1px solid #ccc;\r\n}\r\n\r\n.input-area input {\r\n  flex-grow: 1;\r\n  border: none;\r\n  border-radius: 5px;\r\n  padding: 5px;\r\n  outline: none;\r\n}\r\n\r\n.input-area button {\r\n  background-color: #007bff;\r\n  color: #ffffff;\r\n  border: none;\r\n  border-radius: 5px;\r\n  padding: 5px 10px;\r\n  margin-left: 5px;\r\n  cursor: pointer;\r\n}\r\n\r\nbody.dark .input-area button {\r\n  background-color: #3d3d3d;\r\n}\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -4409,13 +4409,16 @@ var Chatbot = function Chatbot() {
             case 3:
               result = _context.sent;
               // Added catch clause
-              // console.log('Received response:', result.data); // Added log
-              botMessage = result.data.bot; // console.log('Bot Message: ', botMessage); // Log botMessage
+              botMessage = result.data.bot;
               setMessages(function (prevMessages) {
-                return [].concat(_toConsumableArray(prevMessages), [{
-                  sender: 'bot',
-                  text: botMessage
-                }]);
+                var newArr = botMessage.split("<br/>").map(function (value) {
+                  return {
+                    sender: 'bot',
+                    text: value
+                  };
+                });
+                return [].concat(_toConsumableArray(prevMessages), _toConsumableArray(newArr));
+                // return [...prevMessages, {sender: 'bot', text: botMessage}]
               });
               _context.next = 11;
               break;
@@ -4448,7 +4451,7 @@ var Chatbot = function Chatbot() {
   }, [messages]);
   var sendMessage = /*#__PURE__*/function () {
     var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
-      var newMessages, response, botMessage, msg_list;
+      var newMessages, response, botMessage, result;
       return _regeneratorRuntime().wrap(function _callee2$(_context2) {
         while (1) switch (_context2.prev = _context2.next) {
           case 0:
@@ -4477,25 +4480,24 @@ var Chatbot = function Chatbot() {
             response = _context2.sent;
             // Added catch clause
             botMessage = response.data.bot;
-            if (newMessages.length >= 16) {
-              msg_list = botMessage.split('&&');
-              botMessage = msg_list[0];
+            result = response.data.result;
+            if (result) {
               setDraft({
-                header: msg_list[0] ? 'Draft Project Overview Brief' : '',
-                text: msg_list[0] || ''
+                header: result.rough ? 'Draft Project Overview Brief' : '',
+                text: result.rough || ''
               });
               setImproved({
-                header: msg_list[2] ? 'Improved Project Overview Brief' : '',
-                text: msg_list[2] || ''
+                header: result.brief ? '' : '',
+                text: result.brief || ''
               });
               setProposed({
-                header: msg_list[3] ? 'Proposed Project Overview Brief' : '',
-                text: msg_list[3] || ''
+                header: result.proposed ? 'Proposed Project Overview Brief' : '',
+                text: result.proposed || ''
               });
             } else {
               setDraft({
-                header: 'hello world',
-                text: 'I can do it.'
+                header: '',
+                text: ''
               });
               setImproved({
                 header: '',
@@ -4507,22 +4509,25 @@ var Chatbot = function Chatbot() {
               });
             }
             setMessages(function (prevMessages) {
-              return [].concat(_toConsumableArray(prevMessages), [{
-                sender: 'bot',
-                text: botMessage
-              }]);
+              var newArr = botMessage.split("<br/>").map(function (value) {
+                return {
+                  sender: 'bot',
+                  text: value
+                };
+              });
+              return [].concat(_toConsumableArray(prevMessages), _toConsumableArray(newArr));
             });
-            _context2.next = 17;
+            _context2.next = 18;
             break;
-          case 14:
-            _context2.prev = 14;
+          case 15:
+            _context2.prev = 15;
             _context2.t0 = _context2["catch"](5);
             console.error('Error sending message:', _context2.t0);
-          case 17:
+          case 18:
           case "end":
             return _context2.stop();
         }
-      }, _callee2, null, [[5, 14]]);
+      }, _callee2, null, [[5, 15]]);
     }));
     return function sendMessage() {
       return _ref2.apply(this, arguments);
@@ -4543,7 +4548,11 @@ var Chatbot = function Chatbot() {
     return /*#__PURE__*/react.createElement("div", {
       key: index * 1000,
       className: "message ".concat(message.sender)
-    }, message.text);
+    }, message.sender === 'bot' ? /*#__PURE__*/react.createElement("div", {
+      dangerouslySetInnerHTML: {
+        __html: message.text
+      }
+    }) : message.text);
   })), /*#__PURE__*/react.createElement("div", {
     className: "input-area"
   }, /*#__PURE__*/react.createElement("input", {
@@ -4559,7 +4568,27 @@ var Chatbot = function Chatbot() {
     onClick: sendMessage
   }, "Send")))), /*#__PURE__*/react.createElement("div", {
     className: "right-panel"
-  }, /*#__PURE__*/react.createElement("div", null, /*#__PURE__*/react.createElement("h2", null, proposed.header), proposed.text), /*#__PURE__*/react.createElement("div", null, /*#__PURE__*/react.createElement("h2", null, improved.header), improved.text), /*#__PURE__*/react.createElement("div", null, /*#__PURE__*/react.createElement("h2", null, draft.header), draft.text)));
+  }, /*#__PURE__*/react.createElement("div", null, /*#__PURE__*/react.createElement("h2", null, proposed.header), /*#__PURE__*/react.createElement("div", {
+    dangerouslySetInnerHTML: {
+      __html: proposed.text
+    }
+  })), improved.text && proposed.text && /*#__PURE__*/react.createElement("hr", {
+    style: {
+      marginTop: '2rem'
+    }
+  }), /*#__PURE__*/react.createElement("div", null, /*#__PURE__*/react.createElement("h2", null, improved.header), /*#__PURE__*/react.createElement("div", {
+    dangerouslySetInnerHTML: {
+      __html: improved.text
+    }
+  })), draft.text && improved.text && /*#__PURE__*/react.createElement("hr", {
+    style: {
+      marginTop: '2rem'
+    }
+  }), /*#__PURE__*/react.createElement("div", null, /*#__PURE__*/react.createElement("h2", null, draft.header), /*#__PURE__*/react.createElement("div", {
+    dangerouslySetInnerHTML: {
+      __html: draft.text
+    }
+  }))));
 };
 /* harmony default export */ const chat = (Chatbot);
 // EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
